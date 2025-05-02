@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Container setup */
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/ghost.jpg") no-repeat center center/cover;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.navHeader h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Nav Links */
+.navList {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navList p,
+.navList div[role="button"] {
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navList p:hover,
+.navList div[role="button"]:hover {
+  color: #ffa94d;
+}
+
+/* Landing content */
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem;
+  height: calc(100vh - 100px);
+}
+
+.landingMainContainer > div:first-child {
+  max-width: 50%;
+}
+
+.landingMainContainer h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.landingMainContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Get Started Button */
+.landingMainContainer div[role="button"] {
+  background-color: #D97500;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.landingMainContainer div[role="button"]:hover {
+  background-color: #ffa94d;
+}
+
+.landingMainContainer div[role="button"] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Image styling */
+.landingMainContainer img {
+  max-height: 65vh;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .landingMainContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .landingMainContainer > div:first-child {
+    max-width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .landingMainContainer img {
+    margin-top: 2rem;
+    height: 40vh;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .navList {
+    gap: 1rem;
+    font-size: 1rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .landingMainContainer h1 {
+    font-size: 2rem;
+  }
 }
